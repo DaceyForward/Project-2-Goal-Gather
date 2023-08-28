@@ -3,7 +3,7 @@
 ### Overview
 Goal Gather is a collective library of IEP goals and objectives for reference when writing a student's IEP. As a former special education teacher, I know how long the writing process takes for a student's individualized education plan (IEP). Oftentimes, I would struggle with finding the right language for a goal or objective I wanted to include. This meant hours scouring over the internet in search of ideas. Goal Gather is a "one-stop shop" for all IEP goals and objectives. Teachers and therapists can browse already created goals and objectives, they can create their own, as well as save them for future use. 
 
-##### Technology Used:
+#### Technology Used:
 - EJS
 - CSS
 - JavaScript
@@ -33,10 +33,10 @@ Goal Gather is a collective library of IEP goals and objectives for reference wh
 - Mobile-friendly
 - Collaborative
 
-##### Color Scheme:
+#### Color Scheme:
 ![color scheme](https://i.imgur.com/5V8UFYJ.jpg)
 
-##### Font:
+#### Font:
 ###### HTML Code:
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
