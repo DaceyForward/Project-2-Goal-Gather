@@ -3,13 +3,13 @@
 const express = require('express')
 require('dotenv').config()
 const path = require('path')
-const middleware = require('./utils/middleware')
+// const middleware = require('./utils/middleware')
 
 // ------- ROUTERS & CONTROLLERS ------- \\
 
-const AuthRouter = require('./controllers/authControllers')
-const GoalRouter = require('./controllers/goalControllers')
-const ObjectiveRouter = require('./controllers/objectiveControllers')
+// const AuthRouter = require('./controllers/authControllers')
+// const GoalRouter = require('./controllers/goalControllers')
+// const ObjectiveRouter = require('./controllers/objectiveControllers')
 
 const app = express()
 
@@ -20,17 +20,17 @@ app.set('view engine', 'ejs');
 
 // ------- MIDDLEWARE ------- \\
 
-middleware(app)
+// middleware(app)
 
 // ------- ROUTES ------- \\
 
-app.get('/', (req, res) => {
-    res.redirect('/')
-})
+// app.get('/', (req, res) => {
+//     res.redirect('/')
+// })
 
-app.use('/', AuthRouter)
-app.use('/fruits', GoalRouter)
-app.use('/comments', ObjectiveRouter)
+// app.use('/', AuthRouter)
+// app.use('/fruits', GoalRouter)
+// app.use('/comments', ObjectiveRouter)
 
 // ------- SERVER LISTENER ------- \\
 
