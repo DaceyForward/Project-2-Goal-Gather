@@ -60,9 +60,30 @@ font-family: 'Nixie One', cursive;
 ![app wireframe3](https://i.imgur.com/PRkF1OX.jpg)
 
 ## ERD
-![app erd](https://i.imgur.com/wQvvJj1.png)
+![app erd](https://i.imgur.com/d1JFvBh.png)
 
 ## Defined Routes
-![route tables](https://i.imgur.com/f9hVX9q.png)
+
+#### Goals
+
+|HTTP<br>Method|URL<br>Endpoint|Controller<br>Action|Purpose|
+|---|---|---|---|
+| GET | /goals | goalsCtrl.index | View all the goals submitted by the logged in user |
+| GET | /goals/all | goalsCtrl.allGoals | View all the goals regardless of who submitted (use querystring params to perform filtering) |
+| GET | /goals/:id | goalsCtrl.show | View the details of any goal |
+| GET | /goals/new | goalsCtrl.new | View a form for submitting a goal (be sure to define this route before the show route)|
+| POST | /goals | goalsCtrl.create | Handle the new goal form being submitted |
+| GET | /goals/:id/edit | goalsCtrl.edit | View a form for editing a goal (restrict to user who submitted the goal) |
+| PUT | /goals/:id| goalsCtrl.update | Handle the edit goal form being submitted (restrict to user who submitted the goal) |
+| DELETE | /goals/:id| goalsCtrl.delete | Delete a goal (restrict to user who submitted the goal) |
+
+#### Objectives
+
+|HTTP<br>Method|URL<br>Endpoint|Controller<br>Action|Purpose|
+|---|---|---|---|
+| GET | /goals/:id/objectives | objectivesCtrl.show | View all the objectives created for specified goal |
+| GET | /objectives/new | objectivesCtrl.new | View a form to create a new objective (be sure to define this route before the show route) |
+| POST | /goals/:id/objectives | objectivesCtrl.create | Handle the new objective form being submitted |
+| DELETE | /objectives/:id| objectivesCtrl.delete | Delete a objective (restrict to user who submitted the objective) |
 
 
