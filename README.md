@@ -60,7 +60,7 @@ font-family: 'Nixie One', cursive;
 ![app wireframe3](https://i.imgur.com/PRkF1OX.jpg)
 
 ## ERD
-![app erd](https://i.imgur.com/d1JFvBh.png)
+![app erd](https://i.imgur.com/SoYvnyJ.png)
 
 ## Defined Routes
 
