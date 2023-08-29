@@ -2,6 +2,11 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport')
 
+router.get('/home', function(req, res, next) {
+    console.log('There is no place like HOME.')
+    res.render('home', { title: 'Home Page' });
+  });
+
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
     // we'll tell which strategy to use

@@ -13,7 +13,7 @@ db.on('open', () => {
         { subject: 'Writing', desc: 'STUDENT will increase writing skills to BLANK (grade/proficiency level) in the area of Sentence Fluency and Conventions.' },
         { subject: 'Math', desc: 'STUDENT will increase the ability to select and use units and tools of measurements to BLANK (grade/proficiency level)' },
         { subject: 'Behavior', desc: 'STUDENT will decrease the duration of non-compliance by BLANK %, while increasing his ability to accept an adult prompt to utilize a coping skill when demonstrating signs of dysregulation to BLANK %.'},
-        { subject: 'Speech and Language', desc: 'STUDENT will increase awareness of speech production by describing characteristics of fluent and dysfluent speech with BLANK % accuracy during a BLANK minute language sample.' }
+        { subject: 'Speech', desc: 'STUDENT will increase awareness of speech production by describing characteristics of fluent and dysfluent speech with BLANK % accuracy during a BLANK minute language sample.' }
     ]
 
     Goal.deleteMany({ owner: null })

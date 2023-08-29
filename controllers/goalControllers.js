@@ -51,7 +51,8 @@ router.get('/:id', (req, res) => {
         .then(goal => {
             console.log('Here is one goal', goal)
 
-            res.render("goals/show", { goal, title:`${goal.desc}`})
+            // res.render("goals/show", { goal, title:`${goal.desc}`})
+            res.render("goals/show", { goal, title: 'Goal:'})
         })
         .catch(error => console.error)
 })

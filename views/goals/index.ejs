@@ -1,15 +1,32 @@
 <%- include('../partials/nav') %>
 
-<div class="container-md">
-    <ul>
-        <% goals.forEach(goal => {%>
-            <li>
-                <a href="/goals/<%= goal._id %>">
-                    <%= goal.desc %>
-                </a>
-            </li>
-        <% }) %>
-    </ul>
-</div>
+<h5>Library of all IEP goals - Login to see the objectives for each goal.</h5>
 
+<table>
+    <thead>
+        <tr>
+            <th>Subject</th>
+            <th>Goal</th>
+            <th>Objectives</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% goals.forEach(function(goal) { %>
+            <tr>
+                <td><%= goal.subject %></td>
+                <td><%= goal.desc %></td>
+                <% if (user) {%>
+                <td><a href="/goals/<%= goal._id %>">DETAILS</a></td>
+                <% } else { %>
+                    <td>DETAILS</td>
+                <% } %>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+<% if (user) {%>
+<div>
+    <button>Add New Goal</button>
+</div>
+<% } %>
 <%- include('../partials/footer') %>

@@ -25,7 +25,7 @@ middleware(app)
 // ------- ROUTES ------- \\
 
 app.get('/', (req, res) => {
-    res.redirect('/')
+    res.redirect('/home')
 })
 
 app.use('/', AuthRouter)
