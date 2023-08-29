@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<h3>All Goals</h3>
+
+<div class="container-md">
+    <ul>
+        <% goals.forEach(goal => {%>
+            <li>
+                <a href="/goals/<%= goal._id %>">
+                    <%= goal.desc %>
+                </a>
+            </li>
+        <% }) %>
+    </ul>
+</div>
+
+<%- include('../partials/footer') %>
