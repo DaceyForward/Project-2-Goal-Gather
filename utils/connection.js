@@ -15,9 +15,9 @@ const CONFIG = {
 mongoose.connect(DATABASE_URL, CONFIG)
 
 mongoose.connection
-    .on('open', () => console.log('mongoose connected'))
-    .on('close', () => console.log('mongoose disconnected'))
-    .on('error', (err) => console.log('mongoose error\n', err))
+    .on('open', () => console.log('Mongoose is connected.'))
+    .on('close', () => console.log('Mongoose is disconnected.'))
+    .on('error', (err) => console.log('Mongoose error\n', err))
 
 // ------- EXPORT CONNECTION ------- \\
 module.exports = mongoose
