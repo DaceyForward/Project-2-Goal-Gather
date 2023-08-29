@@ -22,6 +22,22 @@ router.get('/', (req, res) => {
 })
 
 // CREATE
+
+router.post('/', (req, res) => { //add checkLogin, back in
+    // need to assign owner
+    req.body.owner = req.user._id
+
+    console.log(req.body)
+    Goal.create(req.body)
+        .then(goal => {
+            res.redirect(`/goals/${goal._id}`)
+        })
+        .catch(err => {
+            console.log(err)
+            res.redirect('/goals/new')
+        })
+    })
+
 // UPDATE
 // DELETE
 
@@ -55,6 +71,16 @@ router.get('/:id', (req, res) => {
             res.render("goals/show", { goal, title: 'Goal:'})
         })
         .catch(error => console.error)
+
+    // Objective.findById(req.params.id)
+    //     .then(objective => {
+    //         console.log('Here is one obj', objective)
+
+    //         // res.render("goals/show", { goal, title:`${goal.desc}`})
+    //         res.render("goals/show", { objective, title: 'Objectives:'})
+    //     })
+    //     .catch(error => console.error)
+    
 })
 
 // ------- EXPORT ROUTER ------- \\

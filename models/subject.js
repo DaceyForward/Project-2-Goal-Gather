@@ -32,3 +32,5 @@ const Subject = model('Subject', subjectSchema)
 // ------- EXPORT THE MODEL ------- \\
 
 module.exports = Subject
+
+// List of subjects: 

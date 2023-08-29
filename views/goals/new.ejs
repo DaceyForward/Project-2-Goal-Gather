@@ -1,0 +1,30 @@
+<%- include('../partials/nav') %>
+
+<div class="container-sm">
+    <form action="/goals" method="POST">
+        <fieldset>
+            <label class="form-label">Subject Area:</label>
+            <select name="subject">
+                <option value="Reading">Reading</option>
+                <option value="Writing">Writing</option>
+                <option value="Math">Math</option>
+                <option value="Functional Academics">Functional Academics</option>
+                <option value="Speech and Language">Speech and Language</option>
+                <option value="Life Skills">Life Skills</option>
+                <option value="Occupational Therapy">Occupational Therapy</option>
+                <option value="Physical Therapy">Physical Therapy</option>
+                <option value="Assistive Technology">Assistive Technology</option>
+                <option value="Social Skills">Social Skills</option>
+                <option value="Social Emotional">Social Emotional</option>
+                <option value="Vocational">Vocational</option>
+              </select>      
+              <br>      
+            <label class="form-label">Your Goal:</label>
+            <input type="text" class="form-control" placeholder="enter your goal here" required>
+            <br> 
+            <input type="submit" class="btn btn-success" value="Create Your Goal">
+        </fieldset>
+    </form>
+</div>
+
+<%- include('../partials/footer') %>
