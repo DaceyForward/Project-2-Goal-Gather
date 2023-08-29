@@ -16,3 +16,16 @@ footer {
     justify-content: center;
     color: white;
 }
+
+a > img {
+    height: 3vh;
+    /* align-content: right; */
+}
+
+.container-fluid {
+    background-color: #9BCDD2;
+}
+
+/* nav {
+    background-color: #9BCDD2;
+} */
