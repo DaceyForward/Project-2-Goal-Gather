@@ -6,15 +6,15 @@ const { Schema } = mongoose
 
 // OBJECTIVE SCHEMA
 const objectiveSchema = new Schema({
-    strategy: {
+    desc: {
         type: String,
         required: true
     },
-    author: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    }, 
-    focusArea: {
+    // author: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'User'
+    // }, 
+    subject: {
         type: String,
         required: true
     }

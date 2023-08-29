@@ -8,7 +8,7 @@ const { Schema, model } = mongoose
 
 // GOAL SCHEMA
 const goalSchema = new Schema({
-    focusArea: {
+    subject: {
         type: String,
         required: true
     },

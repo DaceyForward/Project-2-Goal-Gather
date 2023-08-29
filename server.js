@@ -3,7 +3,7 @@
 const express = require('express')
 require('dotenv').config()
 const path = require('path')
-// const middleware = require('./utils/middleware')
+const middleware = require('./utils/middleware')
 
 // ------- ROUTERS & CONTROLLERS ------- \\
 
@@ -20,13 +20,13 @@ app.set('view engine', 'ejs');
 
 // ------- MIDDLEWARE ------- \\
 
-// middleware(app)
+middleware(app)
 
 // ------- ROUTES ------- \\
 
-// app.get('/', (req, res) => {
-//     res.redirect('/')
-// })
+app.get('/', (req, res) => {
+    res.redirect('/')
+})
 
 // app.use('/', AuthRouter)
 // app.use('/fruits', GoalRouter)
