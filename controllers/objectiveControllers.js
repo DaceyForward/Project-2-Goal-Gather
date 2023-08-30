@@ -12,7 +12,7 @@ const router = express.Router()
 
 // CREATE
 
-router.post('objectives/goalId', checkLogin, (req, res) => {
+router.post('/goals/:id/objectives', checkLogin, (req, res) => {
 
     req.body.author = req.user._id
 
@@ -20,8 +20,9 @@ router.post('objectives/goalId', checkLogin, (req, res) => {
 
         .then(goal => {
             goal.objectives.push(req.body)
-
             return goal.save()
+
+            // res.render(`/goals/${goal._id}/objectives`)
         })
 
         .then(goal => {
@@ -45,14 +46,14 @@ router.patch('/:id', checkLogin, (req, res) => {
 
 // DELETE
 
-router.delete('/goals/show', checkLogin, (req, res) => {
+router.delete('/:goalId/:objectiveId', checkLogin, (req, res) => {
     const gId = req.params.goalId
     const oId = req.params.objectiveId
 
-    Goal.findById(fId)
+    Goal.findById(gId)
         .then(goal => {
 
-            const theObj = goal.objectives.id(cId)
+            const theObj = goal.objectives.id(oId)
  
             if (req.user && theObj.author == req.user.id) {
 

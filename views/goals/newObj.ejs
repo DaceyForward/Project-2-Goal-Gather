@@ -1,0 +1,21 @@
+<%- include('../partials/nav') %>
+
+<h4>Create A New Objective For This Goal</h4>
+<h5><%= goal.desc %></h5>
+
+<hr>
+<% if (user) { %>
+    <div class="col-md-6">
+        <form action="/goals/<%= goal._id %>/objectives" method="POST">
+            <fieldset>
+                <legend>Add Objective</legend>
+                <label class="form-label">Description:</label>
+                <input class="form-control mb-1" type="text" name="desc">
+                <input type="submit" class="btn btn-success" value="Create Objective">
+            </fieldset>
+        </form>
+    </div>
+<% } %>
+<hr>
+
+<%- include('../partials/footer') %>

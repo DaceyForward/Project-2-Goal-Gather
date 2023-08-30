@@ -123,7 +123,7 @@ router.get('/:id', (req, res) => {
         .populate('objectives.author')
         .then(goal => {
             console.log('Here is a goal', goal)
-            res.render("goals/show", { goal, title: 'Goal'})
+            res.render('goals/show', { goal, title: 'Goal'})
         })
         .catch(error => console.error)
 })
