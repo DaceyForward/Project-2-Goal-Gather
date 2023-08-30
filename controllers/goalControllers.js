@@ -4,7 +4,7 @@ const express = require('express')
 require('dotenv').config()
 
 const Goal = require('../models/goal')
-//const checkLogin = require('../utils/ensureLoggedIn')
+const checkLogin = require('../utils/ensureLoggedIn')
 
 const router = express.Router()
 
@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
 
 // CREATE
 
-router.post('/', (req, res) => { //add checkLogin, back in
+router.post('/', checkLogin, (req, res) => { 
     // need to assign owner
     req.body.owner = req.user._id
 
@@ -43,14 +43,14 @@ router.post('/', (req, res) => { //add checkLogin, back in
 
 // NEW
 
-router.get('/new', (req, res) => { //add checkLogin, back in
+router.get('/new', checkLogin, (req, res) => { 
     console.log('This is where you can add a new goal.')
     res.render('goals/new', { title: 'Add a New Goal'})
 })
 
 // EDIT
 
-router.get('/edit/:id', (req, res) => { //add checkLogin, back in
+router.get('/edit/:id', checkLogin, (req, res) => { 
     Goal.findById(req.params.id)
         .then(goal => {
             console.log('Here is one goal to edit', goal)
