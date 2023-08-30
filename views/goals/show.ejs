@@ -4,7 +4,30 @@
 
 <h4>Objective List:</h4>
 
-
+<div class="container-md">
+    <% if (goal.objectives.length) { %>
+        <!-- loop the comments and display -->
+        <div class="container-sm m-4">
+            <% goal.objectives.forEach(obj => {%>
+                <div class="card mb-4 shadow">
+                    <div class="card-body">
+                        <p><%= obj.desc %></p>
+                        <div class="d-flex justify-content-between">
+                            <small>author: <%= obj.author.name %></small>
+                            <% if (user && obj.author?._id == user.id) { %>
+                                <form action="/objectives/<%= goal._id%>/<%= obj._id %>?_method=DELETE" method="POST">
+                                    <input type="submit" class="btn btn-danger" value="X">
+                                </form>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    <% } else { %>
+        <p>No Objectives Yet</p>
+    <% } %>
+</div>
 
 <div>
     <button>Add Objective For This Goal</button>
