@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 
 app.use('/', AuthRouter)
 app.use('/goals', GoalRouter)
-// app.use('/comments', ObjectiveRouter)
+// app.use('/objectives', ObjectiveRouter)
 
 // ------- SERVER LISTENER ------- \\
 

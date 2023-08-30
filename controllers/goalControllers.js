@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
 // CREATE
 
 router.post('/', checkLogin, (req, res) => { 
-    // need to assign owner
+
     req.body.owner = req.user._id
 
     console.log(req.body)
@@ -39,7 +39,41 @@ router.post('/', checkLogin, (req, res) => {
     })
 
 // UPDATE
+
+router.patch('/edit/:id', checkLogin, (req, res) => {
+    Goal.findById(req.params.id)
+        .then(goal => {
+            if (req.user && goal.owner == req.user.id) {
+                return goal.updateOne(req.body)
+            } else {
+                res.send('something went wrong')
+            }
+        })
+        .then(data => {
+            console.log('what is returned from updateOne', data)
+
+            res.redirect('/goals')
+        })
+        .catch(error => console.error)
+})
+
 // DELETE
+
+// router.delete('/:id', checkLogin, (req, res) => {
+//     Fruit.findById(req.params.id)
+//         .then(fruit => {
+//             if (req.user && fruit.owner == req.user.id) {
+//                 return fruit.deleteOne()
+//             } else {
+//                 res.send('something went wrong')
+//             }
+//         })
+//         .then(data => {
+//             console.log('returned from deleteOne', data)
+//             res.redirect('/fruits')
+//         })
+//         .catch(error => console.error)
+// })
 
 // NEW
 
@@ -55,7 +89,7 @@ router.get('/edit/:id', checkLogin, (req, res) => {
         .then(goal => {
             console.log('Here is one goal to edit', goal)
 
-            res.render('goals/edit', { goal, title: `Edit this Goal: ${goal.desc}`})
+            res.render('goals/edit', { goal, title: 'Edit Goal'})
         })
         .catch(error => console.error)
 })
