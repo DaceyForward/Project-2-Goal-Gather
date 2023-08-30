@@ -9,7 +9,7 @@ const middleware = require('./utils/middleware')
 
 const AuthRouter = require('./controllers/authControllers')
 const GoalRouter = require('./controllers/goalControllers')
-// const ObjectiveRouter = require('./controllers/objectiveControllers')
+const ObjectiveRouter = require('./controllers/objectiveControllers')
 
 const app = express()
 
@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 
 app.use('/', AuthRouter)
 app.use('/goals', GoalRouter)
-// app.use('/objectives', ObjectiveRouter)
+app.use('/objectives', ObjectiveRouter)
 
 // ------- SERVER LISTENER ------- \\
 

@@ -96,25 +96,36 @@ router.get('/edit/:id', checkLogin, (req, res) => {
 
 // SHOW
 
+// router.get('/:id', (req, res) => {
+//     Goal.findById(req.params.id)
+//         .then(goal => {
+//             console.log('Here is one goal', goal)
+
+//             // res.render("goals/show", { goal, title:`${goal.desc}`})
+//             res.render("goals/show", { goal, title: 'Goal:'})
+//         })
+//         .catch(error => console.error)
+
+//     // Objective.findById(req.params.id)
+//     //     .then(objective => {
+//     //         console.log('Here is one obj', objective)
+
+//     //         // res.render("goals/show", { goal, title:`${goal.desc}`})
+//     //         res.render("goals/show", { objective, title: 'Objectives:'})
+//     //     })
+//     //     .catch(error => console.error)
+    
+// })
+
 router.get('/:id', (req, res) => {
     Goal.findById(req.params.id)
+        .populate('owner')
+        .populate('objectives.author')
         .then(goal => {
-            console.log('Here is one goal', goal)
-
-            // res.render("goals/show", { goal, title:`${goal.desc}`})
-            res.render("goals/show", { goal, title: 'Goal:'})
+            console.log('Here is a goal', goal)
+            res.render("goals/show", { goal, title: 'Goal'})
         })
         .catch(error => console.error)
-
-    // Objective.findById(req.params.id)
-    //     .then(objective => {
-    //         console.log('Here is one obj', objective)
-
-    //         // res.render("goals/show", { goal, title:`${goal.desc}`})
-    //         res.render("goals/show", { objective, title: 'Objectives:'})
-    //     })
-    //     .catch(error => console.error)
-    
 })
 
 // ------- EXPORT ROUTER ------- \\

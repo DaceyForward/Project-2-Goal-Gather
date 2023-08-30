@@ -23,7 +23,7 @@
                         <div class="d-flex justify-content-between">
                             <small>author: <%= obj.author.name %></small>
                             <% if (user && obj.author?._id == user.id) { %>
-                                <form action="/objectives/<%= goal._id%>/<%= obj._id %>?_method=DELETE" method="POST">
+                                <form action="/objectives/<%= goal._id %>/<%= obj._id %>?_method=DELETE" method="POST">
                                     <input type="submit" class="btn btn-danger" value="X">
                                 </form>
                             <% } %>
@@ -37,8 +37,21 @@
     <% } %>
 </div>
 
-<div>
-    <button>Add Objective For This Goal</button>
-</div>
+
+
+<hr>
+<% if (user) { %>
+    <div class="col-md-6">
+        <form action="/objectives/<%= goal._id %>" method="POST">
+            <fieldset>
+                <legend>Add Objective</legend>
+                <label class="form-label">Description:</label>
+                <input class="form-control mb-1" type="text" name="desc">
+                <input type="submit" class="btn btn-success" value="Create Objective">
+            </fieldset>
+        </form>
+    </div>
+<% } %>
+<hr>
 
 <%- include('../partials/footer') %>
