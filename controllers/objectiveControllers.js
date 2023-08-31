@@ -13,14 +13,16 @@ const router = express.Router()
 // CREATE
 
 router.post('/goals/:id', checkLogin, (req, res) => {
-
+    
     req.body.author = req.user._id
 
-    console.log('inside the create obj function', req.body)
-    Goal.findById(req.params.goalId)
+    
+    Goal.findById(req.params.id)
 
         .then(goal => {
+            
             goal.objectives.push(req.body)
+            console.log('inside the create obj function', goal)
             //res.render(goal.save())
                 return goal.save()
         })

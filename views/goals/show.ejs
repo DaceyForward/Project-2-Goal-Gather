@@ -4,9 +4,7 @@
 
 <% if (user) {%>
     <div>
-        <button>
-            <a href="/goals/edit/<%= goal._id %>">Edit This Goal</a>
-        </button>
+        <a class="btn btn-light" href="/goals/edit/<%= goal._id %>" role="button">Edit This Goal</a>
     </div>
  <% } %>
 <br>
@@ -45,12 +43,12 @@
 
  <% if (user) { %>
     <div class="col-md-6">
-        <form action="/goals/<%= goal._id %>" method="POST">
+        <form action="/objectives/goals/<%= goal._id %>" method="POST">
             <fieldset>
                 <legend>Add A New Objective To This Goal</legend>
                 <label class="form-label">Objective Description:</label>
                 <input class="form-control mb-1" type="text" name="desc">
-                <input type="submit" class="btn btn-success" value="Add Objective To This Goal">
+                <input type="submit" class="btn btn-light" value="Add Objective To This Goal">
             </fieldset>
         </form>
     </div>
