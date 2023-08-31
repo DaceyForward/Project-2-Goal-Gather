@@ -128,6 +128,26 @@ router.get('/:id', (req, res) => {
         .catch(error => console.error)
 })
 
+// router.post('/goals/:id', checkLogin, (req, res) => {
+
+//     req.body.author = req.user._id
+
+//     Goal.findById(req.params.goalId)
+
+//         .then(goal => {
+//             goal.objectives.push(req.body)
+//             res.render(goal.save())
+
+//             // res.render(`/goals/${goal._id}/objectives`)
+//         })
+
+//         .then(goal => {
+//             res.redirect(`/goals/${goal._id}`)
+//         })
+
+//         .catch(error => console.error)
+// })
+
 // ------- EXPORT ROUTER ------- \\
 
 module.exports = router

@@ -12,17 +12,17 @@ const router = express.Router()
 
 // CREATE
 
-router.post('/goals/:id/objectives', checkLogin, (req, res) => {
+router.post('/goals/:id', checkLogin, (req, res) => {
 
     req.body.author = req.user._id
 
+    console.log('inside the create obj function', req.body)
     Goal.findById(req.params.goalId)
 
         .then(goal => {
             goal.objectives.push(req.body)
-            return goal.save()
-
-            // res.render(`/goals/${goal._id}/objectives`)
+            //res.render(goal.save())
+                return goal.save()
         })
 
         .then(goal => {
@@ -71,6 +71,11 @@ router.delete('/:goalId/:objectiveId', checkLogin, (req, res) => {
         .catch(error => console.error)
 })
 
+// SHOW
+router.get('/goals/:id', checkLogin, (req, res) => {
+    console.log('show me the objectives')
+
+})
 
 // ------- EXPORT ROUTER ------- \\
 

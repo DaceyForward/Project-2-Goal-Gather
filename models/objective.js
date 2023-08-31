@@ -8,7 +8,8 @@ const { Schema } = mongoose
 const objectiveSchema = new Schema({
     desc: {
         type: String,
-        required: true
+        required: true, 
+        //default: 'test'
     },
     author: {
         type: Schema.Types.ObjectId,

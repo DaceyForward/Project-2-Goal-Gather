@@ -14,7 +14,8 @@ const goalSchema = new Schema({
     },
     desc: {
         type: String,
-        required: true
+        required: true 
+        //default: 'test'
     },
     owner: {
         type: Schema.Types.ObjectId,
