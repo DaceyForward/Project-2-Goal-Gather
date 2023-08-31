@@ -4,7 +4,7 @@ const passport = require('passport')
 
 router.get('/home', function(req, res, next) {
     console.log('There is no place like HOME.')
-    res.render('home', { title: 'Home Page' });
+    res.render('home');
   });
 
 // Google OAuth login route

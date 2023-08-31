@@ -20,10 +20,10 @@
                     <div class="card-body">
                         <p><%= obj.desc %></p>
                         <div class="d-flex justify-content-between">
-                            <small>author: <%= obj.author.name %></small>
+
                             <% if (user && obj.author?._id == user.id) { %>
                                 <form action="/objectives/goals/<%= goal._id %>?_method=DELETE" method="POST">
-                                    <input type="submit" class="btn btn-danger" value="X">
+                                    <input type="submit" class="btn btn-danger btn-sm" value="X">
                                 </form>
                             <% } %>
                         </div>

@@ -55,7 +55,7 @@ router.delete('/goals/:id', checkLogin, (req, res) => {
     Goal.findById(req.params.id)
         .then(goal => {
 
-            const theObj = goal.objectives.id(req.params.id)
+            const theObj = goal.objectives.findById(req.params.id)
  
             if (req.user && theObj.author == req.user.id) {
 
