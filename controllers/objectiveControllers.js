@@ -48,20 +48,21 @@ router.patch('/:id', checkLogin, (req, res) => {
 
 // DELETE
 
-router.delete('/:goalId/:objectiveId', checkLogin, (req, res) => {
-    const gId = req.params.goalId
-    const oId = req.params.objectiveId
+router.delete('/goals/:id', checkLogin, (req, res) => {
+    // const gId = req.params.goalId
+    //const oId = req.params.objectiveId
 
-    Goal.findById(gId)
+    Goal.findById(req.params.id)
         .then(goal => {
 
-            const theObj = goal.objectives.id(oId)
+            const theObj = goal.objectives.id(req.params.id)
  
             if (req.user && theObj.author == req.user.id) {
 
                 theObj.deleteOne()
 
                 return goal.save()
+
             } else {
                 res.send('something went wrong')
             }
@@ -72,6 +73,28 @@ router.delete('/:goalId/:objectiveId', checkLogin, (req, res) => {
         })
         .catch(error => console.error)
 })
+
+// router.delete('/goals/:id', checkLogin, (req, res) => {
+    
+//     req.body.author = req.user._id
+
+    
+//     Goal.findById(req.params.id)
+
+//         .then(goal => {
+            
+//             goal.objectives.deleteOne()
+//             // console.log('inside the create obj function', goal)
+//             //res.render(goal.save())
+//                 return goal.save()
+//         })
+
+//         .then(goal => {
+//             res.redirect(`/goals/${goal._id}`)
+//         })
+
+//         .catch(error => console.error)
+// })
 
 // SHOW
 router.get('/goals/:id', checkLogin, (req, res) => {

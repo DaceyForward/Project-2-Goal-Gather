@@ -14,11 +14,11 @@ const objectiveSchema = new Schema({
     author: {
         type: Schema.Types.ObjectId,
         ref: 'User'
-    }, 
-    subject: {
-        type: String,
-        required: true
     }
+    // subject: {
+    //     type: String,
+    //     required: true
+    // }
 }, {
     timestamps: true
 })
