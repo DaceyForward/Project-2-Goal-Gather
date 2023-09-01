@@ -48,21 +48,20 @@ router.patch('/:id', checkLogin, (req, res) => {
 
 // DELETE
 
-router.delete('/goals/:id', checkLogin, (req, res) => {
-    // const gId = req.params.goalId
-    //const oId = req.params.objectiveId
-
-    Goal.findById(req.params.id)
+router.delete('/:goalId/:objectiveId', checkLogin, (req, res) => {
+    const gId = req.params.goalId
+    const oId = req.params.objectiveId
+    // find the fruit
+    Goal.findById(gId)
         .then(goal => {
-
-            const theObj = goal.objectives.findById(req.params.id)
- 
+            // isolate the comment
+            const theObj = goal.objectives.id(oId)
+            // check for ownership
             if (req.user && theObj.author == req.user.id) {
-
+                // run a document method to remove the comment(could also use .remove())
                 theObj.deleteOne()
-
+                // save the parent model
                 return goal.save()
-
             } else {
                 res.send('something went wrong')
             }
@@ -73,6 +72,32 @@ router.delete('/goals/:id', checkLogin, (req, res) => {
         })
         .catch(error => console.error)
 })
+
+// router.delete('/goals/:id', checkLogin, (req, res) => {
+//     // const gId = req.params.goalId
+//     //const oId = req.params.objectiveId
+
+//     Goal.findById(req.params.id)
+//         .then(goal => {
+
+//             const theObj = goal.objectives.findById(req.params.id)
+ 
+//             if (req.user && theObj.author == req.user.id) {
+
+//                 theObj.deleteOne()
+
+//                 return goal.save()
+
+//             } else {
+//                 res.send('something went wrong')
+//             }
+//         })
+//         .then(goal => {
+//             // redirect to the show page
+//             res.redirect(`/goals/${goal._id}`)
+//         })
+//         .catch(error => console.error)
+// })
 
 // router.delete('/goals/:id', checkLogin, (req, res) => {
     

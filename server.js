@@ -10,13 +10,14 @@ const middleware = require('./utils/middleware')
 const AuthRouter = require('./controllers/authControllers')
 const GoalRouter = require('./controllers/goalControllers')
 const ObjectiveRouter = require('./controllers/objectiveControllers')
+const SubjectRouter = require('./controllers/subjectControllers')
 
 const app = express()
 
 // ------- VIEW ENGINE ------- \\
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
 
 // ------- MIDDLEWARE ------- \\
 
@@ -31,6 +32,7 @@ app.get('/', (req, res) => {
 app.use('/', AuthRouter)
 app.use('/goals', GoalRouter)
 app.use('/objectives', ObjectiveRouter)
+app.use('/subjects', SubjectRouter)
 
 // ------- SERVER LISTENER ------- \\
 

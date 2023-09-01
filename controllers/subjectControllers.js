@@ -3,15 +3,15 @@
 const express = require('express')
 require('dotenv').config()
 
-const Goal = require('../models/goal')
-const checkLogin = require('../utils/ensureLoggedIn')
+const Subject = require('../models/subject')
+//const checkLogin = require('../utils/ensureLoggedIn')
 
 const router = express.Router()
 
 // ------- ROUTES & CONTROLLERS ------- \\
 // INDEX
 
-router.get('/', (req, res) => {
+router.get('/index', (req, res) => {
     // res.render('subjects/index')
     
     Subject.find({})
@@ -22,3 +22,5 @@ router.get('/', (req, res) => {
         })
         .catch(error => console.error)
 })
+
+module.exports = router
