@@ -2,30 +2,52 @@ body {
     background-color: #DEF4FA;
     padding: 25px;
     font-size: 14px;
-    font-family: 'Nixie One';
+    font-family: 'Nixie One', cursive;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 footer {
-    /* border: 1px solid rgb(255, 255, 255); */
     background-color: #9BCDD2;
     margin-top: auto;
     display: flex;
     justify-content: center;
     color: white;
+    text-align: center;
+    font-size: 2vmin;
 }
 
 a > img {
     height: 3vh;
-    /* align-content: right; */
 }
 
-/* .container-fluid {
-    background-color: #9BCDD2;
-} */
+.navbar-brand {
+    font-family: 'Finger Paint', cursive;
+    color: white;
+}
 
-/* nav {
-    background-color: #9BCDD2;
-} */
+h1 {
+    font-family: 'Finger Paint', cursive;
+    font-size: 6vmin;
+    text-align: center;
+    color: #5c5c5c;
+}
+
+h3 {
+    font-size: 3vmin;
+    text-align: center;
+    color: #9bcdd2;
+}
+
+.card-title {
+    font-size: 2.8vmin;
+    color: #5c5c5c;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.5vmin;
+    /* color: #fb692a; */
+    color: #9bcdd2;
+}
