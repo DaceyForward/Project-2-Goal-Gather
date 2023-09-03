@@ -1,34 +1,31 @@
 <%- include('../partials/nav') %>
-
+<br>
 <h1>All Goals</h1>
 
 <h3>Library of all IEP goals created.</h3>
-
-<table>
-    <thead>
-        <tr>
-            <th>Subject</th>
-            <th>Goal</th>
-            <th>Objectives</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% goals.forEach(function(goal) { %>
-            <tr>
-                <td><%= goal.subject %></td>
-                <td><%= goal.desc %></td>
-                <% if (user) {%>
-                <td><a href="/goals/<%= goal._id %>">DETAILS</a></td>
-                <% } else { %>
-                    <td>DETAILS</td>
-                <% } %>
-            </tr>
-        <% }) %>
-    </tbody>
-</table>
+<br>
 <% if (user) {%>
 <div>
-<a class="btn btn-light" href="/goals/new/" role="button">Add New Goal</a>
+<a class="btn btn-light btn-lg d-grid gap-2 col-3 mx-auto" href="/goals/new/" role="button">ADD NEW GOAL</a>
 </div>
 <% } %>
+<br>
+<br>
+<div class="goal row row-cols-3 row-cols-sm-4 g-3">
+    <% goals.forEach(function(goal) { %>
+    <div class="goal col">
+        <div class="goal card mb-4 shadow h-100">
+        <div class="goal card-body">
+            <h5 class="goal-sub card-title">Subject: <%= goal.subject %></h5>
+            <p class="goal-desc card-text">Goal: <%= goal.desc %></p>
+            <br>
+            <% if (user) {%>
+            <a href="/goals/<%= goal._id %>" class="btn btn-light position-absolute bottom-0 start-50 translate-middle-x">DETAILS</a>
+            <% } %>
+        </div>
+        </div>
+    </div>
+    <% }) %>
+</div>
+
 <%- include('../partials/footer') %>

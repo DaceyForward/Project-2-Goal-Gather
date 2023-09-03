@@ -48,6 +48,18 @@ h3 {
 
 p {
     font-size: 1.5vmin;
-    /* color: #fb692a; */
-    color: #9bcdd2;
+    color: #fb692a;
+    /* color: #9bcdd2; */
 }
+
+.goal-sub {
+    font-size: 1.5vmin;
+}
+
+.goal-desc {
+    font-size: 1.3vmin;
+}
+
+/* .goal-delete {
+    align-items: right;
+} */
