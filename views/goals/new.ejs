@@ -1,10 +1,17 @@
 <%- include('../partials/nav') %>
 
+<br>
+<h1>Add New Goal</h1>
+
+<h3>Enter the information below to create a new IEP goal.</h3>
+<br>
+
 <div class="container-sm">
     <form action="/goals" method="POST">
         <fieldset>
-            <label class="form-label">Subject Area:</label>
-            <select name="subject">
+            <label class="subArea form-label">Subject Area:</label>
+            <select class="subSelect" name="subject">
+                <option value="Select">Select A Subject</option>
                 <option value="Reading">Reading</option>
                 <option value="Writing">Writing</option>
                 <option value="Math">Math</option>
@@ -19,10 +26,10 @@
                 <option value="Vocational">Vocational</option>
               </select>      
               <br>      
-            <label class="form-label">Your Goal:</label>
-            <input type="text" class="form-control" name="desc" placeholder="enter your goal here" required>
+            <label class="yourGoal form-label">Your Goal:</label>
+            <textarea type="text" class="typeNew form-control" name="desc" placeholder="Enter your goal here." required></textarea>
             <br> 
-            <input type="submit" class="btn btn-light" value="Create Your Goal">
+            <input type="submit" class="btn btn-light btn-lg" value="Create Your Goal">
         </fieldset>
     </form>
 </div>

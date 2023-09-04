@@ -1,16 +1,21 @@
 <%- include('../partials/nav') %>
 
-<h5><%= goal.desc %></h5>
+<br>
+<h1>Goal Details</h1>
+
+<h4><%= goal.desc %></h4>
+<br>
+
 
 <% if (user) {%>
     <div>
-        <a class="btn btn-light" href="/goals/edit/<%= goal._id %>" role="button">Edit This Goal</a>
+        <a class="btn btn-light btn-lg d-grid gap-2 col-3 mx-auto" href="/goals/edit/<%= goal._id %>" role="button">Edit This Goal</a>
     </div>
  <% } %>
 <br>
 <hr>
 <br>
-<h4>Objective List:</h4>
+<h5>Objective List:</h5>
 
 <div class="container-md">
     <% if (goal.objectives.length) { %>
@@ -46,9 +51,10 @@
         <form action="/objectives/goals/<%= goal._id %>" method="POST">
             <fieldset>
                 <legend>Add A New Objective To This Goal</legend>
-                <label class="form-label">Objective Description:</label>
-                <input class="form-control mb-1" type="text" name="desc">
-                <input type="submit" class="btn btn-light" value="Add Objective To This Goal">
+                <label class="objDesc form-label">Objective Description:</label>
+                <textarea class="objInfo form-control mb-1" type="text" name="desc" placeholder="Enter your objective here."></textarea>
+                <br>
+                <input type="submit" class="btn btn-light btn-lg" value="Create Objective">
             </fieldset>
         </form>
     </div>
