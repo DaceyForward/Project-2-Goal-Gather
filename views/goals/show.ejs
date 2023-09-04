@@ -19,16 +19,16 @@
 
 <div class="container-md">
     <% if (goal.objectives.length) { %>
-        <div class="container-sm m-4">
+        <div class="container-sm m-2">
             <% goal.objectives.forEach(obj => {%>
-                <div class="card mb-4 shadow">
+                <div class="card mb-3 shadow">
                     <div class="card-body">
                         <p><%= obj.desc %></p>
                         <div class="d-flex justify-content-between">
 
                             <% if (user && obj.author?._id == user.id) { %>
                                 <form action="/objectives/<%= goal._id %>/<%= obj._id %>?_method=DELETE" method="POST">
-                                    <input type="submit" class="btn btn-danger btn-sm" value="X">
+                                    <input type="submit" class="deleteObj btn btn-danger btn-sm position-absolute top-50 end-0 translate-middle-y" value="X">
                                 </form>
                             <% } %>
                         </div>

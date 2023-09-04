@@ -144,3 +144,11 @@ h5 {
     font-size: 2.25vmin;
     font-weight: bold;
 }
+
+.deleteObj {
+    margin: 15px;
+}
+
+.details {
+    margin-bottom: 15px;
+}

@@ -3,7 +3,7 @@
 <h1>All Goals</h1>
 
 <h3>Library of all IEP goals created.</h3>
-<br>
+
 <% if (user) {%>
 <div>
 <a class="btn btn-light btn-lg d-grid gap-2 col-3 mx-auto" href="/goals/new/" role="button">ADD NEW GOAL</a>
@@ -20,12 +20,12 @@
             <p class="goal-desc card-text">Goal: <%= goal.desc %></p>
             <br>
             <% if (user) {%>
-            <a href="/goals/<%= goal._id %>" class="btn btn-light position-absolute bottom-0 start-50 translate-middle-x">DETAILS</a>
+            <a href="/goals/<%= goal._id %>" class="details btn btn-light position-absolute bottom-0 start-50 translate-middle-x">DETAILS</a>
             <% } %>
         </div>
         </div>
     </div>
     <% }) %>
 </div>
-
+<br>
 <%- include('../partials/footer') %>
