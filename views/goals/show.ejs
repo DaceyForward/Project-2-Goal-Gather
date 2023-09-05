@@ -1,12 +1,8 @@
 <%- include('../partials/nav') %>
-
 <br>
 <h1>Goal Details</h1>
-
 <h4><%= goal.desc %></h4>
 <br>
-
-
 <% if (user) {%>
     <div>
         <a class="btn btn-light btn-lg d-grid gap-2 col-3 mx-auto" href="/goals/edit/<%= goal._id %>" role="button">Edit This Goal</a>
@@ -16,7 +12,6 @@
 <hr>
 <br>
 <h5>Objective List:</h5>
-
 <div class="container-md">
     <% if (goal.objectives.length) { %>
         <div class="container-sm m-2">
@@ -43,9 +38,6 @@
 
 <hr>
 <br>
-
-
-
  <% if (user) { %>
     <div class="col-md-6">
         <form action="/objectives/goals/<%= goal._id %>" method="POST">

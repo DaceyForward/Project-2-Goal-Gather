@@ -12,16 +12,6 @@ const subjectSchema = new Schema({
         type: String,
         required: true
     }
-    // },
-    // desc: {
-    //     type: String,
-    //     required: true
-    // },
-    // owner: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'User'
-    // },
-    // objectives: [objectiveSchema]
 }, { 
     timestamps: true 
 })

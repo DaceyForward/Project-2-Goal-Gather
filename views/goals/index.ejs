@@ -1,15 +1,12 @@
 <%- include('../partials/nav') %>
 <br>
 <h1>All Goals</h1>
-
 <h3>Library of all IEP goals created.</h3>
-
 <% if (user) {%>
 <div>
 <a class="btn btn-light btn-lg d-grid gap-2 col-3 mx-auto" href="/goals/new/" role="button">ADD NEW GOAL</a>
 </div>
 <% } %>
-
 <br>
 <div class="goal row row-cols-3 row-cols-sm-4 g-3">
     <% goals.forEach(function(goal) { %>

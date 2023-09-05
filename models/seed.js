@@ -16,17 +16,8 @@ db.on('open', () => {
         { subject: 'Speech and Language', desc: 'STUDENT will increase awareness of speech production by describing characteristics of fluent and dysfluent speech with BLANK % accuracy during a BLANK minute language sample.' }
     ]
 
-    // const startObjectives = [
-    //     {subject: 'Reading', desc: 'read a book'},
-    //     {subject: 'Writing', desc: 'write a letter'},
-    //     {subject: 'Math', desc: 'add some numbers'},
-    //     {subject: 'Behavior', desc: 'be a good person'},
-    //     {subject: 'Speech and Language', desc: 'talk'}
-    // ]
-
     Goal.deleteMany({ owner: null })
         .then(() => {
-
             Goal.create(startGoals)
                 .then(data => {
                     console.log('These are the IEP goals: \n', data)

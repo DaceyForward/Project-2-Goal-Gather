@@ -2,14 +2,13 @@
 <%- include('../partials/nav') %>
 <br>
 <h1>Edit Goal</h1>
-
 <br>
-
 <div class="container-sm">
     <form action="/goals/edit/<%= goal._id %>?_method=PATCH" method="POST">
         <fieldset>
             <label class="editForm form-label">Subject Area:</label>
-                <select class="subSelect" name="subject" selected="<%= goal.subject %>">
+                <select class="subSelect" name="subject" selected="<%= goal.subject %>" required="true">
+                    <option value="Choose Subject">Choose A Subject</option>
                     <option value="Reading">Reading</option>
                     <option value="Writing">Writing</option>
                     <option value="Math">Math</option>

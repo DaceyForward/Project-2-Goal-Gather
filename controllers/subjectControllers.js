@@ -9,6 +9,7 @@ const Subject = require('../models/subject')
 const router = express.Router()
 
 // ------- ROUTES & CONTROLLERS ------- \\
+
 // INDEX
 
 router.get('/index', (req, res) => {
@@ -16,8 +17,7 @@ router.get('/index', (req, res) => {
     
     Subject.find({})
         .then(subjects => {
-            console.log('These are the subs', subjects)
-
+            //console.log('These are the subs', subjects)
             res.render('subjects/index', { subjects })
         })
         .catch(error => console.error)

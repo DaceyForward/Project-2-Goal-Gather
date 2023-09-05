@@ -15,10 +15,6 @@ const objectiveSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     }
-    // subject: {
-    //     type: String,
-    //     required: true
-    // }
 }, {
     timestamps: true
 })

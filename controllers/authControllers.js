@@ -9,10 +9,8 @@ router.get('/home', function(req, res, next) {
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
-    // we'll tell which strategy to use
     'google',
     {
-    // this requests the user's profile and email
     scope: ['profile', 'email']
     }
 ))

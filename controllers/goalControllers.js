@@ -48,7 +48,6 @@ router.patch('/edit/:id', checkLogin, (req, res) => {
         })
         .then(data => {
             //console.log('what is returned from updateOne', data)
-
             res.redirect('/goals')
         })
         .catch(error => console.error)
