@@ -87,3 +87,5 @@ font-family: 'Nixie One', cursive;
 
 ## MVP Showcase
 ![mvp](https://i.imgur.com/NxmFIP3.png)
+
+Deployed application link: https://goalgather2.fly.dev
