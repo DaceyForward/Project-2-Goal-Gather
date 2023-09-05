@@ -16,11 +16,11 @@ Goal Gather is a collective library of IEP goals and objectives for reference wh
 ## User Stories
 - As a user, I want to see a home page with links and a login button.
 - As a user, I want the ability to log in and log out.
-- As a user, I want to click on a link to see all the subject focus areas, with clickable links.
-- As a user, I want to click on a link to see all the goals for a clicked subject focus area.
+- As a user, I want to click on a link to see all the subject focus areas.
+- As a user, I want to click on a link to see all the goals.
 - As a user, I want to see a list of all the goals, with a link to a details page with more information.
 - As a user, I want to see a list of all the objectives that have been added to a specific goal.
-- As a user, I want the ability to add or delete my own goals and objectives.
+- As a user, I want the ability to add or delete my own objectives.
 - As a user, I want to see a link I can click on to access my saved information. (Bonus)
 - As a user, I want the ability to save goals and objective to my account so I can refer to them later when writing an IEP. (Bonus)
 - As a user, I want the ability to add my special education class and assign goals to specific students. (Bonus)
@@ -30,7 +30,6 @@ Goal Gather is a collective library of IEP goals and objectives for reference wh
 - Simple, clean, minimalist design and layout
 - Logo
 - Navigation bar at the top with quick-access links
-- Mobile-friendly
 - Collaborative
 
 #### Color Scheme:
@@ -86,5 +85,5 @@ font-family: 'Nixie One', cursive;
 | POST | /goals/:id/objectives | objectivesCtrl.create | Handle the new objective form being submitted |
 | DELETE | /objectives/:id| objectivesCtrl.delete | Delete a objective (restrict to user who submitted the objective) |
 
-MVP Showcase
+## MVP Showcase
 ![mvp](https://i.imgur.com/NxmFIP3.png)
