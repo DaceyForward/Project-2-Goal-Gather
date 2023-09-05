@@ -15,14 +15,14 @@
     <% goals.forEach(function(goal) { %>
     <div class="goal col">
         <div class="goal card mb-4 shadow h-100">
-        <div class="goal card-body">
-            <h5 class="goal-sub card-title">Subject: <%= goal.subject %></h5>
-            <p class="goal-desc card-text">Goal: <%= goal.desc %></p>
-            <br>
-            <% if (user) {%>
-            <a href="/goals/<%= goal._id %>" class="details btn btn-light position-absolute bottom-0 start-50 translate-middle-x">DETAILS</a>
-            <% } %>
-        </div>
+            <div class="goal card-body">
+                <h5 class="goal-sub card-title">Subject: <%= goal.subject %></h5>
+                    <p class="goal-desc card-text">Goal: <%= goal.desc %></p>
+                <br>
+                 <% if (user) {%>
+                    <a href="/goals/<%= goal._id %>" class="details btn btn-light position-absolute bottom-0 start-50 translate-middle-x">DETAILS</a>
+                 <% } %>
+            </div>
         </div>
     </div>
     <% }) %>
